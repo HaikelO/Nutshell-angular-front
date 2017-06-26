@@ -1,0 +1,19 @@
+{
+  "name": "nutshell-angular-front",
+  "version": "1.0.0",
+  "description": "Angular front for Nutshell ",
+  "main": "\"\"",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaikelO/Nutshell-angular-front.git"
+  },
+  "author": "Haikel Ouaghrem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HaikelO/Nutshell-angular-front/issues"
+  },
+  "homepage": "https://github.com/HaikelO/Nutshell-angular-front#readme"
+}
