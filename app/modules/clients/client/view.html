@@ -1,0 +1,17 @@
+<section class="col-md-12">
+  <h2>Client</h2>
+  <hr>
+  <div class="">
+    <label for="">Id :</label> {{ vm.Client.id }} <br>
+    <label for="">Entreprise :</label>  {{ vm.Client.name }}<br>
+    <label for="">Contact :</label>
+    <ul>
+      <li ng-repeat="obj in vm.Client.contact">
+        <label for="">Nom :</label>  {{ obj.name }}<br>
+        <label for="">Téléphone :</label>  {{ obj.phone }}<br>
+        <label for="">Mail :</label>  {{ obj.mail }}<br>
+        <label for="">Addresse :</label>  {{ obj.adresse }}<br>
+      </li>
+    </ul>
+  </div>
+</section>

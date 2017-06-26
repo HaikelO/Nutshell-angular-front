@@ -1,0 +1,124 @@
+<h3>
+    Devis n° : {{vm.devis.numero}}
+</h3>
+<button ng-click="vm.generatePDF()">PDF</button>
+<hr>
+
+
+<div id="devisPDF" class="devisPDF row">
+    <div class="text-center row" style="width:99%;">
+        <div class="col-md-12">
+            <br>
+            <h1 class="" style="font-size: 50px">Devis</h1>
+            <br>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div style="margin:19px;">
+                        <img src="/img/logo.png" alt="" class=" ">
+                    </div>  
+                </div>
+                <div class="col-md-6" style="">
+                    <div style="margin: 19px; border:3px solid black;">
+                        <div>
+                            Numero de devis : {{ vm.devis.numero }}
+                        </div>
+                        <div>
+                            Date de devis : {{ vm.devis.date | date:'dd-MM-yyyy'}}
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" style="">
+            <div class="row">
+                <div  class="col-md-6" style="">
+                    <div style="margin-left:19px;margin-right:19px;border:3px solid black;">
+                        <div>Galerie 7</div>
+                        <div>28 Rue de Sambre-et-Meuse</div>
+                        <div>75010, Paris</div>
+                        <div>FRANCE</div>
+                        <div>09 73 11 55 23</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="margin-left:19px;margin-right:19px;border:3px solid black;">
+                        <div style="border-bottom: 3px solid black;">
+                            Destinataire
+                        </div>
+                        <div>
+                            {{vm.devis.client.nom}}
+                        </div>
+                        <div>
+                            {{ vm.devis.client.tel }}
+                        </div>
+                        <div>
+                            {{ vm.devis.client.mail }}
+                        </div>
+                        <div>
+                            {{ vm.devis.client.adresse }}
+                        </div>
+                        <div>
+                            {{ vm.devis.client.cp }}
+                        </div>
+                        <div>
+                            {{ vm.devis.client.pays }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" style="margin:20px">
+            <table class="table" style="margin-top: 200px;">
+                <thead>
+                    <tr>
+                        <th style="text-align: center">
+                            Ref
+                        </th>
+                        <th style="text-align: center">
+                            Désignation
+                        </th>
+                        <th style="text-align: center">
+                            Quantité
+                        </th>
+                        <th style="text-align: center">
+                            Prix/U HT
+                        </th>
+                        <th style="text-align: center">
+                            Prix/U TTC
+                        </th>
+                        <th style="text-align: center">
+                            Montant TTC
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="produit in vm.devis.produits">
+                        <td>{{produit.ref}}</td>
+                        <td>{{produit.denomination}} {{produit.processeur.valeur}}</td>
+                        <td>{{produit.quantite}}</td>
+                        <td>{{produit.prix.ht | number:2}} €</td>
+                        <td>{{produit.prix.ttc | number:2}} €</td>
+                        <td>{{produit.prix.tttc | number:2}} €</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <span class="pull-left">Total(HT)    </span><span class="pull-right">{{vm.devis.prix.ht | number:2}} €</span><br>
+                            <span class="pull-left">Tax             </span><span class="pull-right">{{vm.devis.prix.ttc - vm.devis.prix.ht | number:2}} €</span><br>
+                            <span class="pull-left">Total(TTC)  </span><span class="pull-right">{{vm.devis.prix.ttc | number:2}} €</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+     </div>
+</div>
+
+

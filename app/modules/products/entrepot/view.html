@@ -1,0 +1,56 @@
+<section class="col-md-12">
+  <div class="col-md-12">
+    <h2>Entrepôt</h2>
+    <hr>
+  </div>
+  <div class="col-md-12">
+    <h3>Matieres :</h3>
+    <table class="table">
+      <thead>
+          <tr>
+            <th>
+              Name
+            </th>
+            <th>
+              QTT
+            </th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="matiere in vm.Matieres">
+          <td>
+            {{ matiere.name }}
+          </td>
+          <td>
+            {{ matiere.qtt }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-12">
+    <h3>Produits :</h3>
+    <table class="table">
+      <thead>
+          <tr>
+            <th>
+              Name
+            </th>
+            <th>
+              QTT
+            </th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="produit in vm.Produits">
+          <td>
+            {{ produit.name }}
+          </td>
+          <td>
+            {{ produit.qtt }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

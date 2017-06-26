@@ -1,0 +1,108 @@
+<section class="col-md-12">
+  <div class="col-md-6">
+    <h2>Moule : {{ Moule[0].name }}</h2>
+    <button type="button" name="button" ng-click="smMoule(Moule[0])">Modifier</button>
+    <hr>
+    <label for="">Id :</label>{{ Moule[0].id }}<br>
+    <label for="">Type :</label>{{ Moule[0].type }}<br>
+    <label for="">Empreinte :</label>{{ Moule[0].empreinte }}<br>
+    <label for="">Nombre utilisation :</label>{{ Moule[0].nombre_utilisation }}<br>
+    <label for="">Poid :</label>{{ Moule[0].poid }}<br>
+    <label for="">Etat :</label>{{ Moule[0].etat }}<br>
+    <label for="">Description :</label>{{ Moule[0].description }}<br>
+    <label for="">Fabricant :</label>{{ Moule[0].fabricant }}<br>
+    <label for="">Machinery :</label>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            Id
+          </th>
+          <th>
+            Name
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="mach in Moule[0].Machinery">
+          <td>
+            {{ mach.id }}
+          </td>
+          <td ng-repeat="ma in Machinery | filter : mach.id">
+            {{ ma.name }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-6">
+    <div class="well">
+      <div class="">
+        <h2>Modifer</h2>
+        <hr>
+      </div>
+      <div class="">
+        <div class="form-group">
+          <label for="">Id :</label>
+          <input type="number" name="id" value="" ng-model="modifiermoule.id" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Name :</label>
+          <input type="text" name="name" value="" ng-model="modifiermoule.name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Type :</label>
+          <input type="text" name="name" value="" ng-model="modifiermoule.type" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Empreinte :</label>
+          <input type="number" name="name" value="" ng-model="modifiermoule.empreinte" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Nombre utilisation :</label>
+          <input type="number" name="name" value="" ng-model="modifiermoule.nombre_utilisation" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Poid :</label>
+          <input type="number" name="name" value="" ng-model="modifiermoule.poid" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Etat :</label>
+          <input type="text" name="name" value="" ng-model="modifiermoule.etat" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Description :</label>
+          <input type="text" name="name" value="" ng-model="modifiermoule.description" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Fabricant :</label>
+          <input type="text" name="name" value="" ng-model="modifiermoule.fabricant" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Machinery :</label>
+          <div class="" ng-repeat="machine in modifiermoule.Machinery">
+            <div class="well">
+              <div class="form-group">
+                <select ng-model="machine.id" ng-options="obj.id as obj.name for obj in Machinery" class="form-control" name="">
+                </select>
+              </div>
+              <div class="form-group">
+                <button type="button" name="button" ng-click="rcMachine()" class="form-control">Annuler</button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="button" name="button" ng-click="acMachine()" class="form-control">Ajouter</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="button" name="modifier" ng-click="mMoule(modifiermoule)" class="form-control">Modifier</button>
+        </div>
+        <div class="form-group">
+          <button type="button" name="button" ng-click="amMoule()" class="form-control">Annuler</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

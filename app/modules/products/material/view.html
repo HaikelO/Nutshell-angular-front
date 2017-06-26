@@ -1,0 +1,74 @@
+<section class="col-md-12">
+  <div class="col-md-6">
+    <h2>Matiere : {{ Matiere.name }}</h2>
+    <button type="button" name="button" ng-click="smMatiere(Matiere[0])">Modifier</button>
+    <hr>
+    <label for="">Id :</label>{{ Matiere.id }}<br>
+    <label for="">Quantité :</label>{{ Matiere.qtt }}<br>
+    <label for="">Fournisseurs :</label>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            Id
+          </th>
+          <th>
+            Name
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="fourni in vm.Matiere.fournisseurs">
+          <td>
+            {{ fourni.id }}
+          </td>
+          <td ng-repeat="fou in vm.Fournisseurs |  filter : fourni.id">
+            {{ fou.name }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-6">
+    <div class="well">
+      <div class="">
+        <h2>Modifer</h2>
+        <hr>
+      </div>
+      <div class="">
+        <div class="form-group">
+          <label for="">Id :</label>
+          <input type="number" name="id" value="" ng-model="vm.modifiermatiere.id" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Name :</label>
+          <input type="text" name="name" value="" ng-model="vm.modifiermatiere.name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Quantité :</label>
+          <input type="text" name="name" value="" ng-model="vm.modifiermatiere.qtt" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Fournisseurs :</label>
+          <div class="" ng-repeat="fourni in vm.modifiermatiere.fournisseurs">
+            <select ng-model="fourni.id" ng-options="obj.id as obj.name for obj in vm.Fournisseurs" class="form-control" name="">
+            </select>
+            <div class="form-group">
+              <button type="button" name="button" ng-click="vm.rcFournisseur()" class="form-control">Annuler</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="button" name="button" ng-click="vm.acFournisseur()" class="form-control">Ajouter un fournisseur</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="button" name="modifier" ng-click="vm.mMatiere(vm.modifiermatiere)" class="form-control">Modifier</button>
+        </div>
+        <div class="form-group">
+          <button type="button" name="button" ng-click="vm.amMatiere()" class="form-control">Annuler</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

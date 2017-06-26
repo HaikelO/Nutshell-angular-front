@@ -1,0 +1,69 @@
+<section class="col-md-12">
+  <div class="col-md-12">
+    <h2>Users</h2>
+    <hr>
+  </div>
+  <div class="col-md-8">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            Id
+          </th>
+          <th>
+            Name
+          </th>
+          <th>
+            password
+          </th>
+          <th>
+
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="user in Users">
+          <td>
+            {{ user.id }}
+          </td>
+          <td><a href="#/User/{{ user._id }}">{{ user.name }}</a>
+
+          </td>
+          <td>
+            {{ user.password }}
+          </td>
+          <td>
+            <button type="button" name="button" class="btn btn-danger" ng-click="sUser(user)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-4">
+    <div class="well">
+      <h3>New User</h3>
+      <div class="form-group">
+        <label for="">Id :</label>
+        <input type="Number" name="name" value="" class="form-control" ng-model="ajoutU.id">
+      </div>
+      <div class="form-group">
+        <label for="">Name :</label>
+        <input type="text" name="name" value="" class="form-control" ng-model="ajoutU.name">
+      </div>
+      <div class="form-group">
+        <label for="">Password :</label>
+        <input type="password" name="name" value="" class="form-control" ng-model="ajoutU.password">
+      </div>
+      <div class="form-group">
+        <label for="">Mail :</label>
+        <input type="text" name="name" value="" class="form-control" ng-model="ajoutU.mail">
+      </div>
+      <div class="form-group">
+        <label for="">Birthday :</label>
+        <input type="date" name="name" value="" class="form-control" ng-model="ajoutU.birthday">
+      </div>
+      <button type="button" name="button" class="btn btn-success form-control" ng-click="aUser(ajoutU)">Ajouter</button>
+    </div>
+
+  </div>
+</section>

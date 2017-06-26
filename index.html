@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app="GpApp" ng-strict-di>
+  <head>
+    <meta charset="utf-8">
+    <title>GP</title>
+    <link rel="stylesheet" href="/css/lib/bootstrap-3.3.6-dist/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/myStyle.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <!--<section id="header" class="col-md-12">
+      <h1>GP</h1>
+    </section>-->
+    <section id="navigation" class="col-md-12">
+      <nav>
+        <ul class="nav">
+          <li><a href="#!/Login">Login</a></li>
+          <li><a href="#!/Products">Products</a></li>
+          <li><a href="#!/Matieres">Matières</a></li>
+          <li><a href="#!/Machinery">Machinery</a></li>
+          <li><a href="#!/Moules">Moules</a></li>
+          <li><a href="#!/Entrepot">Entrepôt</a></li>
+          <li><a href="#!/Fournisseurs">Fournisseurs</a></li>
+          <li><a href="#!/Personnel">Personnel</a></li>
+          <li><a href="#!/Taches">Tâches</a></li>
+          <li><a href="#!/Achats">Achats</a></li>
+          <li><a href="#!/Ventes">Ventes</a></li>
+          <li><a href="#!/Clients">Clients</a></li>
+          <li class="pull-right"><a href="#!/Configuration">Configurations</a></li>
+        </ul>
+      </nav>
+    </section>
+    <section id="content" class="col-md-12">
+      <div class="view-container">
+        <div ng-view class="view-frame"></div>
+      </div>
+    </section>
+    <section id="footer" class="col-md-12">
+
+    </section>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+    <script type="text/javascript" src="js/lib/angular/angular-sanitize.js"></script>
+    <script type="text/javascript" src="js/lib/angular/angular-route.js"></script>
+    <script type="text/javascript" src="js/lib/angular/angular-resource.js"></script>
+    <script type="text/javascript" src="js/lib/angular/angular-cookies.js"></script>
+    <script type="text/javascript" src="js/lib/angular/angular-storage.js"></script>
+    <!-- <script type="text/javascript" src="js/lib/bootstrap-3.3.6-dist/js/bootstrap.js"></script> -->
+   
+   
+    
+    <!--<script type="text/javascript" src="App/modules/achat/index.service.achat.js"></script>
+    <script type="text/javascript" src="App/modules/achats/index.service.achats.js"></script>
+    <script type="text/javascript" src="App/modules/client/index.service.client.js"></script>
+    <script type="text/javascript" src="App/modules/clients/index.service.clients.js"></script>
+    <script type="text/javascript" src="App/modules/etats/index.service.etats.js"></script>
+    <script type="text/javascript" src="App/modules/fournisseur/index.service.fournisseur.js"></script>
+    <script type="text/javascript" src="App/modules/fournisseurs/index.service.fournisseurs.js"></script>
+    <script type="text/javascript" src="App/modules/login/index.service.login.js"></script>
+    <script type="text/javascript" src="App/modules/machine/index.service.machine.js"></script>
+    <script type="text/javascript" src="App/modules/Machinery/index.service.Machinery.js"></script>
+    <script type="text/javascript" src="App/modules/matiere/index.service.matiere.js"></script>
+    <script type="text/javascript" src="App/modules/matieres/index.service.matieres.js"></script>
+    <script type="text/javascript" src="App/modules/moule/index.service.moule.js"></script>
+    <script type="text/javascript" src="App/modules/moules/index.service.moules.js"></script>
+    <script type="text/javascript" src="App/modules/personnel/index.service.personnel.js"></script>
+    <script type="text/javascript" src="App/modules/produit/index.service.produit.js"></script>
+    <script type="text/javascript" src="App/modules/produits/index.service.produits.js"></script>
+    <script type="text/javascript" src="App/modules/tache/index.service.taches.js"></script>
+    <script type="text/javascript" src="App/modules/user/index.service.user.js"></script>
+    <script type="text/javascript" src="App/modules/users/index.service.users.js"></script>
+    <script type="text/javascript" src="App/modules/vente/index.service.vente.js"></script>
+    <script type="text/javascript" src="App/modules/ventes/index.service.ventes.js"></script>
+    <script type="text/javascript" src="App/modules/index.services.js"></script>
+    <script type="text/javascript" src="App/modules/achat/index.controller.achats.js"></script>
+    <script type="text/javascript" src="App/modules/achats/index.controller.achat.js"></script>
+    <script type="text/javascript" src="App/modules/client/index.controller.clients.js"></script>
+    <script type="text/javascript" src="App/modules/clients/index.controller.client.js"></script>
+    <script type="text/javascript" src="App/modules/configuration/index.controller.configuration.js"></script>
+    <script type="text/javascript" src="App/modules/entrepot/index.controller.entrepot.js"></script>
+    <script type="text/javascript" src="App/modules/fournisseur/index.controller.fournisseurs.js"></script>
+    <script type="text/javascript" src="App/modules/fournisseurs/index.controller.fournisseur.js"></script>
+    <script type="text/javascript" src="App/modules/login/index.controller.login.js"></script>
+    <script type="text/javascript" src="App/modules/machine/index.controller.Machinery.js"></script>
+    <script type="text/javascript" src="App/modules/Machinery/index.controller.machine.js"></script>
+    <script type="text/javascript" src="App/modules/matiere/index.controller.matieres.js"></script>
+    <script type="text/javascript" src="App/modules/matieres/index.controller.matiere.js"></script>
+    <script type="text/javascript" src="App/modules/moule/index.controller.moules.js"></script>
+    <script type="text/javascript" src="App/modules/moules/index.controller.moule.js"></script>
+    <script type="text/javascript" src="App/modules/personnel/index.controller.personnel.js"></script>
+    <script type="text/javascript" src="App/modules/produits/index.controller.produits.js"></script>
+    <script type="text/javascript" src="App/modules/produit/index.controller.produit.js"></script>
+    <script type="text/javascript" src="App/modules/tache/index.controller.taches.js"></script>
+    <script type="text/javascript" src="App/modules/user/index.controller.users.js"></script>
+    <script type="text/javascript" src="App/modules/users/index.controller.user.js"></script>
+    <script type="text/javascript" src="App/modules/vente/index.controller.ventes.js"></script>
+    <script type="text/javascript" src="App/modules/ventes/index.controller.vente.js"></script>
+    <script type="text/javascript" src="App/modules/index.controller.modules.js"></script>
+
+     <script type="text/javascript" src="App/MainApp.js" ></script>-->
+
+     <script type="text/javascript" src="app/min/app.min.js"></script>
+  </body>
+</html>

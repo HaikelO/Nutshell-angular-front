@@ -1,0 +1,96 @@
+<section class="col-md-12">
+  <div class="col-md-12">
+    <h2>Achats</h2>
+    <hr>
+  </div>
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            Produit
+          </th>
+          <th>
+            Quantité
+          </th>
+          <th>
+            Fournisseur
+          </th>
+          <th>
+            Prix
+          </th>
+          <th>
+            Etat
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="achat in Achats">
+          <th ng-repeat="produit in vm.Produits | filter:{'id':achat.idProduit}:true" ng-if="achat.idProduit">
+            <a href="/#/Achat/{{achat._id}}">{{ produit.name}}</a> 
+          </th>
+          <th ng-repeat="matiere in vm.Matieres | filter:{'id':achat.idMatiere}:true" ng-if="achat.idMatiere">
+            <a href="/#/Achat/{{achat._id}}">{{ matiere.name}}</a> 
+          </th>
+          <th>
+            {{ achat.qtt }}
+          </th>
+          <th ng-repeat="fournisseur in vm.Fournisseurs | filter:{'idFournisseur':achat.idFournisseur}:true">
+            {{ fournisseur.name }}
+          </th>
+          <th>
+            {{ achat.prix }}
+          </th>
+          <th>
+            {{ achat.etat }}
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <div class="well">
+      <h3>Produit :</h3>
+      <div class="form-group">
+
+        <select ng-model="vm.ajoutA.idProduit" ng-options="obj.id as obj.name for obj in vm.Produits" class="form-control" name="">
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="">Quantité :</label>
+        <input type="number" ng-model="vm.ajoutA.qtt" class="form-control" name="name" value="">
+      </div>
+      <div class="form-group">
+        <label for="">Fournisseur :</label>
+        <select ng-model="vm.ajoutA.idFournisseur" ng-options="obj.id as obj.name for obj in vm.Fournisseurs" class="form-control" name="">
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="">Prix :</label>
+        <input type="Number" ng-model="ajoutA.prix" class="form-control" name="name" value="">
+      </div>
+      <button type="button" name="button" ng-click="vm.aAchat(vm.ajoutA)" class="btn btn-default form-control">Ajouter</button>
+    </div>
+    <div class="well">
+      <h3>Matiere :</h3>
+      <div class="form-group">
+        <select ng-model="vm.ajoutA.idMatiere" ng-options="obj.id as obj.name for obj in vm.Matieres" class="form-control" name="">
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="">Quantité :</label>
+        <input type="number" ng-model="vm.ajoutA.qtt" class="form-control" name="name" value="">
+      </div>
+      <div class="form-group">
+        <label for="">Fournisseur :</label>
+        <select ng-model="vm.ajoutA.idFournisseur" ng-options="obj.id as obj.name for obj in vm.Fournisseurs" class="form-control" name="">
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="">Prix :</label>
+        <input type="Number" ng-model="ajoutA.prix" class="form-control" name="name" value="">
+      </div>
+      <button type="button" name="button" ng-click="vm.aAchat(vm.ajoutA)" class="btn btn-default form-control">Ajouter</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,157 @@
+<section class="col-md-12">
+  <div class="col-md-6">
+    <h2>Produit : {{ vm.Produit.name }}</h2>
+    <hr>
+    <button type="button" name="button" ng-click="vm.smProduit(vm.Produit)">Modifier</button><br>
+    <label for="">Id :</label>{{ vm.Produit.id }}<br>
+    <label for="">Quantité :</label>{{ vm.Produit.qtt }}<br>
+    <div ng-if="vm.Produit.nomenclature.produits.length > 0">
+      <label for="">Produits :</label><br>
+      <table class="table">
+          <thead>
+            <tr>
+              <th>
+                Name
+              </th>
+              <th>
+                QTT
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="prod in vm.Produit.nomenclature.produits">
+              <td>
+                {{ prod.name }}
+              </td>
+              <td>
+                {{ prod.qtt }}
+              </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+    <div ng-if="vm.Produit.nomenclature.matieres.length > 0">
+      <label for="">Matieres :</label><br>
+      <table class="table">
+          <thead>
+            <tr>
+              <th>
+                Name
+              </th>
+              <th>
+                QTT
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="mat in vm.Produit.nomenclature.matieres">
+              <td>
+                {{ mat.name }}
+              </td>
+              <td>
+                {{ mat.qtt }}
+              </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+    <div ng-if="vm.Produit.stock.length > 0">
+      <label for="">Stock :</label><br>
+      <table class="table">
+          <thead>
+            <tr>
+              <th>
+                Location
+              </th>
+              <th>
+                QTT
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="stock in vm.Produit.stock">
+              <td>
+                {{ stock.location }}
+              </td>
+              <td>
+                {{ stock.qtt }}
+              </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+    {{ Produit[0] }}
+  </div>
+  <div class="col-md-6">
+    <div class="well">
+      <div class="">
+        <h2>Modifer</h2>
+        <hr>
+      </div>
+      <div class="">
+        <div class="form-group">
+          <label for="">Id :</label>
+          <input type="number" name="id" value="" ng-model="vm.modifierproduit.id" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Name :</label>
+          <input type="text" name="name" value="" ng-model="vm.modifierproduit.name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Quantité :</label>
+          <input type="number" name="name" value="" ng-model="vm.modifierproduit.qtt" class="form-control">
+        </div>
+        <div class="form-group">
+          <h3>Produits :</h3>
+          <div ng-repeat="produit in vm.modifierproduit.nomenclature.produits">
+            <label for="">Produit</label>
+            <select ng-model="produit.id" ng-options="obj.id as obj.name for obj in vm.Produits" class="form-control" name="">
+            </select>
+            <label for="">Quantité</label>
+            <input ng-model="produit.qtt" type="number" name="name" value="" class="form-control">
+            <br>
+            <button type="button" name="button" ng-click="vm.rcProduit()" class="form-control">Annuler</button>
+            <br>
+          </div>
+          <button type="button" name="button" ng-click="vm.acProduit()" class="form-control">Ajouter un produit</button>
+        </div>
+        <div class="form-group">
+          <h3>Matieres :</h3>
+          <div ng-repeat="matiere in vm.modifierproduit.nomenclature.matieres">
+            <label for="">Matiere</label>
+            <select ng-model="matiere.id" ng-options="obj.id as obj.name for obj in vm.Matieres" class="form-control" name="">
+            </select>
+            <label for="">Quantité</label>
+            <input ng-model="matiere.qtt" type="number" name="name" value="" class="form-control">
+            <br>
+            <button type="button" name="button" ng-click="vm.rcMatiere()" class="form-control">Annuler</button>
+            <br>
+          </div>
+          <button type="button" name="button" ng-click="vm.acMatiere()" class="form-control">Ajouter une matiere</button>
+        </div>
+        <div class="form-group">
+          <h3>Stock :</h3>
+          <div class="" ng-repeat="stock in vm.modifierproduit.stock">
+            <div class="form-group">
+              <label for="">Quantité</label>
+              <input type="number" ng-model="stock.qtt" name="name" value="" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="">Location</label>
+              <input type="number" ng-model="stock.location" name="name" value="" class="form-control">
+            </div>
+            <button type="button" name="button" ng-click="vm.rcStock()" class="form-control">Annuler</button>
+          </div>
+          <button type="button" name="button" ng-click="vm.acStock()" class="form-control">Ajouter</button>
+        </div>
+        <hr>
+        <div class="form-group">
+          <button type="button" name="modifier" ng-click="vm.mProduit(vm.modifierproduit)" class="form-control btn btn-default">Enregistrer</button>
+        </div>
+        <div class="form-group">
+          <button type="button" name="button" ng-click="vm.amProduit()" class="form-control btn btn-default">Annuler</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

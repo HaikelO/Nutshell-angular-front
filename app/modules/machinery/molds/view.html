@@ -1,0 +1,95 @@
+<section id="corps">
+  <div class="col-md-12">
+      <h2>Moules</h2>
+      <hr>
+  </div>
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Id</th><th>Name</th> <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="moule in vm.Moules">
+            <td>
+              {{moule.id}}
+            </td>
+            <td>
+              <a href="#/Moule/{{moule._id}}">{{moule.name}}</a>
+            </td>
+            <td>
+              <button type="button" name="button" ng-click="vm.smMoule(moule)">Modifier</button>
+            </td>
+            <td>
+              <button type="button" name="button" ng-click="vm.sMoule(moule)">Supprimer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <div class="well">
+        <div class="">
+          <h2>Ajouter</h2>
+          <hr>
+        </div>
+        <div class="form-group">
+          <label for="">Id :</label>
+          <input type="number" name="id" ng-model="vm.ajoutMoule.id" value="" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Nom :</label>
+          <input type="text" name="nom" ng-model="vm.ajoutMoule.name" value="" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Type :</label>
+          <input type="text" name="nom" ng-model="vm.ajoutMoule.type" value="" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Empreinte :</label>
+          <input type="number" name="name" value="" ng-model="vm.ajoutMoule.empreinte" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Nombre utilisation :</label>
+          <input type="number" name="name" value="" ng-model="vm.ajoutMoule.nombre_utilisation" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Poid :</label>
+          <input type="number" name="name" value="" ng-model="vm.ajoutMoule.poid" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Etat :</label>
+          <input type="text" name="name" value="" ng-model="vm.ajoutMoule.etat" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Description :</label>
+          <input type="text" name="name" value="" ng-model="vm.ajoutMoule.description" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Fabricant :</label>
+          <input type="text" name="name" value="" ng-model="vm.ajoutMoule.fabricant" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Machinery :</label>
+          <div class="" ng-repeat="machine in vm.ajoutMoule.Machinery">
+            <div class="well">
+              <div class="form-group">
+                <select ng-model="machine.id" ng-options="obj.id as obj.name for obj in vm.Machinery" class="form-control" name="">
+                </select>
+              </div>
+              <div class="form-group">
+                <button type="button" name="button" ng-click="vm.rcMachine()" class="form-control">Annuler</button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="button" name="button" ng-click="vm.acMachine()" class="form-control">Ajouter</button>
+          </div>
+        </div>
+        <button type="button" name="button" ng-click="vm.aMoule(vm.ajoutMoule)" class="btn btn-default form-control">Ajouter un moule</button>
+      </div>
+    </div>
+  </div>
+</section>

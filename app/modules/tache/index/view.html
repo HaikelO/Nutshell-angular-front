@@ -1,0 +1,23 @@
+<section class="col-md-12">
+  <div class="col-md-12">
+    <div class="">
+      <h2>Tâches</h2>
+      <hr>
+    </div>
+    <div class="well">
+      <h2>Fabriquer</h2>
+      <hr>
+      <div class="form-group">
+        <label for="">Produit :</label>
+        <select ng-model="fabriquerproduit.produit" ng-options="obj as obj.name for obj in Produits" class="form-control" name="">
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="">Quantité :</label>
+        <input type="number" name="name" value="" class="form-control" ng-model="fabriquerproduit.qtt">
+      </div>
+      {{fabriquerproduit}}
+      <button type="button" name="button" ng-click="fProduit(fabriquerproduit)" class="form-control">Fabriquer</button>
+    </div>
+  </div>
+</section>

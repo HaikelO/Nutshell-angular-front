@@ -1,0 +1,68 @@
+<section class="col-md-12">
+  <div class="col-md-12">
+    <h2>Ventes</h2>
+    <hr>
+  </div>
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            Id
+          </th>
+          <th>
+            Client
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="vente in Ventes">
+          <td>
+            <a href="#/Vente/{{ vente._id }}">{{ vente.id }}</a> 
+          </td>
+          <td>
+            <a href="#/Vente/{{ vente._id }}" ng-repeat="client in Clients | filter : {id : vente.idClient }: strict">{{client.name}}</a> 
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <div class="well">
+      <h3>Ajouter une vente</h3>
+   
+      <div class="form-group">
+        <label for="">Id :</label>
+        <input ng-model="aVente.id" type="number" name="" id="" class="form-control"></input>
+      </div>
+      <div class="form-group">
+        <label for="">Client :</label>
+        <select ng-model="aVente.idClient" ng-options="obj.id as obj.name for obj in Clients" class="form-control" name="">
+        </select>
+      </div>
+      <div class="form-group">
+        <button ng-click="acProduit()" class="form-control btn btn-default">Ajout produit</button>
+        <hr>
+        <div ng-repeat="cprod in aVente.produits">
+          <div class="form-group">
+            <label for="">Produit :</label>
+              <select ng-model="cprod.id" ng-options="obj.id as obj.name for obj in Produits" class="form-control" name="">
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="">Qtt :</label>
+            <input ng-model="cprod.qtt" type="number" name="" id="" class="form-control"></input>
+          </div>
+          <div class="form-group">
+            <label for="">Prix :</label>
+            <input ng-model="cprod.prix" type="number" name="" id="" class="form-control"></input>
+          </div>
+          <hr>
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-default form-control" ng-click="ajoutVente(aVente)">Ajouter</button>
+      </div>
+    </div>
+  </div>
+</section>

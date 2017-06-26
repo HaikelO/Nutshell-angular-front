@@ -1,0 +1,75 @@
+    <section id="corps">
+      <div class="col-md-12">
+          <h2>Matieres</h2>
+          <hr>
+      </div>
+      <div class="col-md-12">
+        <div class="col-md-6">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>
+                  Id
+                </th>
+                <th>
+                  Name
+                </th>
+                <th>
+
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="matiere in vm.Matieres">
+                <td>
+                  {{matiere.id}}
+                </td>
+                <td>
+                  <a href="#/Matiere/{{matiere._id}}">{{matiere.name}}</a>
+                </td>
+                <td>
+                  <button type="button" name="button" ng-click="vm.smMatiere(matiere)">Modifier</button>
+                </td>
+                <td>
+                  <button type="button" name="button" ng-click="vm.sMatiere(matiere)">Supprimer</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <div class="well">
+            <div class="">
+              <h2>Ajouter</h2>
+              <hr>
+            </div>
+            <div class="form-group">
+              <label for="">Id :</label>
+              <input type="number" name="id" ng-model="vm.ajoutMatiere.id" value="" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="">Nom :</label>
+              <input type="text" name="nom" ng-model="vm.ajoutMatiere.name" value="" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="">Quantité :</label>
+              <input type="text" name="nom" ng-model="vm.ajoutMatiere.qtt" value="" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="">Fournisseurs :</label>
+              <div class="" ng-repeat="fourni in vm.ajoutMatiere.fournisseurs">
+                <select ng-model="fourni.id" ng-options="obj.id as obj.name for obj in vm.Fournisseurs" class="form-control" name="">
+                </select>
+                <div class="form-group">
+                  <button type="button" name="button" ng-click="vm.rcFournisseur()" class="form-control">Annuler</button>
+                </div>
+              </div>
+              <div class="form-group">
+                <button type="button" name="button" ng-click="vm.acFournisseur()" class="form-control">Ajouter un fournisseur</button>
+              </div>
+            </div>
+            <button type="button" name="button" ng-click="vm.aMatiere(vm.ajoutMatiere)" class="btn btn-default form-control">Ajouter</button>
+          </div>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,44 @@
+<section class="col-md-12">
+    <div class="col-md-12">
+        <h2>Vente</h2>
+        <button class="btn" ng-click="supprimerVente(Vente)">Supprimer</button>
+        <hr>
+        
+    </div>
+    <div class="col-md-6">
+        <label>Id : </label>{{ Vente.id }}</br>
+        <label for="">Client : </label>{{ Vente.idClient }}
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Produit
+                    </th>
+                    <th>
+                        Qtt
+                    </th>
+                    <th>
+                        Prix
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="prod in Vente.produits">
+                    <td ng-repeat="produit in Produits | filter : {id : prod.id} : strict">
+                        {{produit.name}}
+                    </td>
+                    <td>
+                        {{ prod.qtt }}
+                    </td>
+                    <td>
+                        {{ prod.prix }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <label for="">Total : </label>{{Total}}<br>
+    </div>
+
+</section>

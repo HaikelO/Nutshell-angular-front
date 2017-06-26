@@ -1,0 +1,99 @@
+<section class="col-md-12">
+  <div class="col-md-12">
+    <h2>Clients</h2>
+    <hr>
+  </div>
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            Id
+          </th>
+          <th>
+            Name
+          </th>
+          <th>
+
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="client in vm.Clients">
+          <td>
+            {{client.id}}
+          </td>
+          <td>
+            <a href="#/Client/{{client._id}}">{{client.name}}</a>
+          </td>
+          <td>
+            <button type="button" name="button" ng-click="vm.smClient(vm.client)">Modifier</button>
+          </td>
+          <td>
+            <button type="button" name="button" ng-click="vm.sClient(vm.client)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <div class="well">
+      <div class="">
+        <h2>Ajouter</h2>
+        <hr>
+      </div>
+      <div class="form-group">
+        <label for="">Id :</label>
+        <input type="number" name="id" ng-model="vm.ajoutC.id" value="" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Entreprise :</label>
+        <input type="text" name="nom" ng-model="vm.ajoutC.name"value="" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Nom Contact :</label>
+        <input type="text" name="nom" ng-model="vm.ajoutC.contact.name" value="" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Adresse :</label>
+        <input type="text" name="nom" ng-model="vm.ajoutC.contact.adresse" value="" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Mail :</label>
+        <input type="text" name="nom" ng-model="vm.ajoutC.contact.mail" value="" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Téléphone :</label>
+        <input type="text" name="nom" ng-model="vm.ajoutC.contact.phone" value="" class="form-control">
+      </div>
+      <button type="button" name="button" ng-click="vm.aClient(vm.ajoutC)" class="btn btn-default form-control">Ajouter un client</button>
+      {{ ajoutC }}
+    </div>
+  </div>
+  <!-- <div class="col-md-6">
+    <div class="well">
+      <div class="">
+        <h2>Modifer</h2>
+        <hr>
+      </div>
+      <div class="">
+        <div class="form-group">
+          <label for="">Id :</label>
+          <input type="number" name="id" value="" ng-model="modifierF.id" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Name :</label>
+          <input type="text" name="name" value="" ng-model="modifierF.name" class="form-control">
+        </div>
+        <div class="form-group">
+          <button type="button" name="modifier" ng-click="mFournisseur(modifierF)" class="form-control">Modifier</button>
+        </div>
+        <div class="form-group">
+          <button type="button" name="button" ng-click="amFournisseur()" class="form-control">Annuler</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+</section>
